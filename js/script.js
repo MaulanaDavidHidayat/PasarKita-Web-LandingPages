@@ -380,26 +380,61 @@ function renderFavorites() {
 renderFavorites();
 
 /* =====================================================
-    12. CONTACT FORM → EMAIL
+    12. CONTACT FORM → FORMSPREE
 ===================================================== */
 
 const contactForm = document.querySelector("#contactForm");
+const contactFormNote = document.querySelector("#contactFormNote");
 
 if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
+    contactForm.addEventListener("submit", async (event) => {
         event.preventDefault();
 
-        const name = document.querySelector("#name").value.trim();
-        const email = document.querySelector("#email").value.trim();
-        const message = document.querySelector("#message").value.trim();
+        const submitButton = contactForm.querySelector(
+            'button[type="submit"]'
+        );
 
-        const myEmail = "davidnajib350@gmail.com";
-        const subject = `Pesan dari ${name} - PasarKita`;
-        const body = `Halo MauviiDev,\n\nNama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`;
+        const formData = new FormData(contactForm);
 
-        const mailtoURL = `mailto:${myEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Mengirim...";
+        }
 
-        window.location.href = mailtoURL;
+        try {
+            const response = await fetch(contactForm.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    Accept: "application/json"
+                }
+            });
+
+            if (response.ok) {
+                contactForm.reset();
+
+                if (contactFormNote) {
+                    contactFormNote.textContent =
+                        "Pesan berhasil dikirim. Terima kasih sudah menghubungi saya.";
+                    contactFormNote.style.color = "var(--primary)";
+                }
+            } else {
+                throw new Error("Gagal mengirim form");
+            }
+        } catch (error) {
+            console.error("Formspree error:", error);
+
+            if (contactFormNote) {
+                contactFormNote.textContent =
+                    "Pesan gagal dikirim. Silakan coba lagi.";
+                contactFormNote.style.color = "#c0392b";
+            }
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = "Kirim Pesan →";
+            }
+        }
     });
 }
 
