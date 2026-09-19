@@ -1,314 +1,131 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Favorit | PasarKita</title>
-
-    <meta
-        name="description"
-        content="Daftar produk favorit dalam konsep website PasarKita."
-    >
-
+    <meta name="description" content="Daftar produk favorit dalam konsep website PasarKita.">
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-    <!-- =========================================
-         NAVBAR
-    ========================================== -->
+    <!-- NAVBAR -->
     <header class="navbar">
-
         <div class="container nav-container">
-
-            <!-- Logo -->
             <a href="index.html" class="logo">
-
-                <img
-                    src="assets/logo.png"
-                    alt="Logo PasarKita"
-                >
-
+                <img src="assets/logo.png" alt="Logo PasarKita">
             </a>
 
-
-            <!-- Menu -->
             <nav class="nav-menu">
-
-                <a href="index.html">
-                    Beranda
-                </a>
-
-                <a href="produk.html">
-                    Produk
-                </a>
-
-                <a href="umkm.html">
-                    UMKM
-                </a>
-
-                <a href="cerita.html">
-                    Cerita Lokal
-                </a>
-
-                <a href="kontak.html">
-                    Kontak
-                </a>
-
+                <a href="index.html">Beranda</a>
+                <a href="produk.html">Produk</a>
+                <a href="umkm.html">UMKM</a>
+                <a href="cerita.html">Cerita Lokal</a>
+                <a href="kontak.html">Kontak</a>
             </nav>
 
-
-            <!-- Action -->
             <div class="nav-actions">
-
-
-                <button
-                    type="button"
-                    aria-label="Favorit"
-                    class="nav-icon favorite-nav active"
-                >
+                <button type="button" aria-label="Favorit" class="nav-icon favorite-nav active">
                     ♥
                 </button>
-
-                <button
-                    type="button"
-                    aria-label="Menu"
-                    class="menu-toggle"
-                >
+                <button type="button" aria-label="Menu" class="menu-toggle">
                     ☰
                 </button>
-
             </div>
-
         </div>
-
     </header>
 
-
-    <!-- =========================================
-         MAIN
-    ========================================== -->
+    <!-- MAIN -->
     <main>
-
-
-        <!-- =====================================
-             FAVORITE HEADER
-        ====================================== -->
+        <!-- FAVORITE HEADER -->
         <section class="favorite-header">
-
             <div class="container">
-
-                <span class="section-label">
-                    PRODUK TERSIMPAN
-                </span>
-
-                <h1>
-                    Favorit Saya
-                </h1>
-
-                <p>
-                    Produk yang kamu simpan untuk
-                    dilihat kembali.
-                </p>
-
+                <span class="section-label">PRODUK TERSIMPAN</span>
+                <h1>Favorit Saya</h1>
+                <p>Produk yang kamu simpan untuk dilihat kembali.</p>
             </div>
-
         </section>
 
+        <!-- FAVORITE PRODUCTS -->
+        <section class="favorite-section section">
+            <div class="container">
+                <div class="product-grid" id="favoriteGrid">
+                </div>
 
-        <!-- =====================================
-             FAVORITE PRODUCTS
-        ====================================== -->
-<section class="favorite-section section">
-    <div class="container">
+                <div class="favorite-empty" id="favoriteEmpty">
+                    <div class="favorite-empty-icon">♡</div>
+                    <h2>Belum Ada Favorit</h2>
+                    <p>Produk yang kamu simpan akan muncul di halaman ini.</p>
+                    <a href="produk.html" class="btn btn-primary">
+                        Jelajahi Produk
+                    </a>
+                </div>
+            </div>
+        </section>
 
-        <div class="product-grid" id="favoriteGrid">
-        </div>
-
-        <div class="favorite-empty" id="favoriteEmpty">
-
-            <div class="favorite-empty-icon">♡</div>
-
-            <h2>Belum Ada Favorit</h2>
-
-            <p>
-                Produk yang kamu simpan akan muncul di halaman ini.
-            </p>
-
-            <a href="produk.html" class="btn btn-primary">
-                Jelajahi Produk
-            </a>
-
-        </div>
-
-    </div>
-</section>
-
-
-        <!-- =====================================
-             CTA
-        ====================================== -->
+        <!-- CTA -->
         <section class="cta">
-
             <div class="container cta-container">
-
-                <span class="section-label">
-                    PASARKITA
-                </span>
-
-                <h2>
-                    Masih mencari produk lain?
-                </h2>
-
-                <p>
-                    Jelajahi katalog produk lokal
-                    PasarKita.
-                </p>
-
-                <a
-                    href="produk.html"
-                    class="btn btn-light"
-                >
+                <span class="section-label">PASARKITA</span>
+                <h2>Masih mencari produk lain?</h2>
+                <p>Jelajahi katalog produk lokal PasarKita.</p>
+                <a href="produk.html" class="btn btn-light">
                     Jelajahi Produk →
                 </a>
-
             </div>
-
         </section>
-
     </main>
 
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <!-- Brand -->
+            <div class="footer-brand">
+                <img src="assets/logo.png" alt="PasarKita">
+                <p>
+                    Konsep marketplace produk lokal.<br>
+                    Personal frontend project.<br>
+                    Dibuat oleh Maulana David Hidayat.
+                </p>
+            </div>
 
-    <!-- =========================================
-         FOOTER
-    ========================================== -->
-<footer class="footer">
+            <!-- Produk -->
+            <div class="footer-column">
+                <h3>Produk</h3>
+                <a href="produk.html">Makanan</a>
+                <a href="produk.html">Minuman</a>
+                <a href="produk.html">Fashion</a>
+                <a href="produk.html">Kerajinan</a>
+            </div>
 
-    <div class="container footer-container">
+            <!-- Tentang -->
+            <div class="footer-column">
+                <h3>Tentang</h3>
+                <a href="umkm.html">UMKM Lokal</a>
+                <a href="cerita.html">Cerita Lokal</a>
+                <a href="kontak.html">Kontak</a>
+            </div>
 
-        <!-- Brand -->
-
-        <div class="footer-brand">
-
-            <img
-                src="assets/logo.png"
-                alt="PasarKita"
-            >
-
-            <p>
-                Konsep marketplace produk lokal.
-                <br>
-                Personal frontend project.
-                <br>
-                Dibuat oleh Maulana David Hidayat.
-            </p>
-
+            <!-- PasarKita -->
+            <div class="footer-column">
+                <h3>PasarKita</h3>
+                <a href="index.html">Tentang Project</a>
+                <a href="produk.html">Jelajahi Produk</a>
+                <a href="favorit.html">Favorit Saya</a>
+                <a href="kontak.html">Hubungi Saya</a>
+            </div>
         </div>
 
-
-        <!-- Produk -->
-
-        <div class="footer-column">
-
-            <h3>
-                Produk
-            </h3>
-
-            <a href="produk.html">
-                Makanan
-            </a>
-
-            <a href="produk.html">
-                Minuman
-            </a>
-
-            <a href="produk.html">
-                Fashion
-            </a>
-
-            <a href="produk.html">
-                Kerajinan
-            </a>
-
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 Maulana David Hidayat · PasarKita Personal Project</p>
+            </div>
         </div>
-
-
-        <!-- Tentang -->
-
-        <div class="footer-column">
-
-            <h3>
-                Tentang
-            </h3>
-
-            <a href="umkm.html">
-                UMKM Lokal
-            </a>
-
-            <a href="cerita.html">
-                Cerita Lokal
-            </a>
-
-            <a href="kontak.html">
-                Kontak
-            </a>
-
-        </div>
-
-
-        <!-- PasarKita -->
-
-        <div class="footer-column">
-
-            <h3>
-                PasarKita
-            </h3>
-
-            <a href="index.html">
-                Tentang Project
-            </a>
-
-            <a href="produk.html">
-                Jelajahi Produk
-            </a>
-
-            <a href="favorit.html">
-                Favorit Saya
-            </a>
-
-            <a href="kontak.html">
-                Hubungi Saya
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- Copyright -->
-
-    <div class="footer-bottom">
-
-        <div class="container">
-
-            <p>
-                © 2026 Maulana David Hidayat ·
-                PasarKita Personal Project
-            </p>
-
-        </div>
-
-    </div>
-
-</footer>
-
+    </footer>
 
     <!-- JavaScript -->
     <script src="js/script.js"></script>
-
 </body>
-
 </html>
